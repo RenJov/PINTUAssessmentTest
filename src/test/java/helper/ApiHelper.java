@@ -1,11 +1,9 @@
 package helper;
 
 import io.restassured.response.Response;
-import org.json.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.testng.Assert;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 import static io.restassured.RestAssured.given;
@@ -46,20 +44,5 @@ public class ApiHelper {
         }
 
         return jsonString;
-    }
-
-    public static void main(String[] args) throws FileNotFoundException {
-        String jsonString = null;
-        JSONParser jsonParser = new JSONParser();
-
-        try (FileReader reader = new FileReader("src/main/resources/postRequest.json")) {
-            Object obj = jsonParser.parse(reader);
-            jsonString = obj.toString();
-            System.out.println("json: "+jsonString);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
     }
 }
