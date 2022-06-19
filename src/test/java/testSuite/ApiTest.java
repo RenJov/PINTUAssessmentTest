@@ -15,7 +15,7 @@ public class ApiTest {
     private final static String ENDPOINT = "https://jsonplaceholder.typicode.com/posts";
     private final static String JSON_POST_REQUEST = "src/main/resources/postRequest.json";
 
-    @Test
+    @Test(description="GET, Check data-type of the response compared to the requirement")
     public void getTest() {
 
         Response response = apiHelper.getApiTest(ENDPOINT, "", 200);
@@ -28,7 +28,7 @@ public class ApiTest {
         }
     }
 
-    @Test
+    @Test(description="POST, Check data-type of the response compared to the request")
     public void postTest() throws Exception {
 
         String requestJsonString = apiHelper.getJsonStringFromFile(JSON_POST_REQUEST);
